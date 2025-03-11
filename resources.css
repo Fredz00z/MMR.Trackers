@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+}
+
+/* HEADER */
+
+.menu {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #eef2ff;
+  margin: 10px;
+  gap: 12px;
+}
+#title {
+  font-size: 3rem;
+  translate: -10px;
+}
+.menu a {
+  color: #eef2ff;
+  text-decoration: none;
+}
+.menu a:hover {
+  color: #a7ffe5;
+}
+.majora-icon {
+  width: 80px;
+}
+
+.resources {
+  display: flex;
+  margin-left: auto;
+  font-size: 2rem;
+  width: 178px;
+  padding-right: 30px;
+  cursor: pointer;
+  gap: 12px;
+}
