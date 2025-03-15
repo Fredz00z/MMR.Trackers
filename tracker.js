@@ -1,3 +1,4 @@
+/* TRACKER-ITEM TOGGLE */
 const itemsEls = document
   .querySelector(".tracker-container")
   .querySelectorAll("img");
@@ -21,8 +22,7 @@ itemsEls.forEach((itemEl) => {
 });
 */
 
-/* DRAG AND DRPO */
-
+/* DRAG AND DROP */
 const boxes = document.querySelectorAll(".box");
 const imgs = document.querySelectorAll("img");
 
@@ -48,6 +48,7 @@ boxes.forEach((box) => {
   });
 });
 
+/*SHOP-SANITY TOGGLE */
 const shopFull = document.querySelector(".shop-full");
 const shopLate = document.querySelector(".shop-late");
 const swapBtns = document.querySelectorAll(".swap-btn");
@@ -57,10 +58,12 @@ swapBtns.forEach((btn) => {
       shopLate.style.display = "none";
       shopFull.style.display = "grid";
     } else {
-      shopLate.style.display = "none";
-      shopFull.style.display = "grid";
+      shopLate.style.display = "grid";
+      shopFull.style.display = "none";
     }
-    console.log(shopFull.style.display === "none");
-    console.log(shopLate.style.display === "none");
   });
 });
+
+/* Auto-complete */
+
+let keywords = [];
