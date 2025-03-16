@@ -1,3 +1,8 @@
+tippy("#South-Wall", {
+  content: "South Wall",
+  placement: "bottom",
+  duration: 0,
+});
 /* TRACKER-ITEM TOGGLE */
 const itemsEls = document
   .querySelector(".tracker-container")
@@ -66,4 +71,55 @@ swapBtns.forEach((btn) => {
 
 /* Auto-complete */
 
-let keywords = [];
+let keywords = ["Great Bay Temple ", "GBT", "Snowhead Temple", "SHT"];
+
+let sortedKeywords = keywords.sort();
+let inputEl = document.getElementById("input");
+
+function createKeywordList(keywords) {
+  const listEl = document.createElement("ul");
+  listEl.className = "autocomplete-list";
+
+  document.querySelector(".notes-container").appendChild(listEl);
+
+  keywords.forEach((word) => {
+    const listItem = document.createElement("li");
+    const keyButton = document.createElement("button");
+    keyButton.addEventListener("click", onKeywordClick);
+    keyButton.innerHTML = word;
+    listItem.appendChild(keyButton);
+    listEl.appendChild(listItem);
+  });
+}
+
+function onKeywordClick(e) {
+  e.preventDefault();
+  const buttonEl = e.target;
+  inputEl.value = buttonEl.innerHTML;
+  document.getElementById("input").focus();
+  removeKeywordList();
+}
+
+function removeKeywordList() {
+  const listEl = document.querySelector(".autocomplete-list");
+  if (listEl) listEl.remove();
+}
+
+function onInputChange() {
+  removeKeywordList();
+
+  const typedWord = inputEl.value.toLowerCase();
+
+  if (typedWord.length === 0) return;
+
+  const filteredWords = [];
+
+  sortedKeywords.forEach((word) => {
+    if (word.substring(0, typedWord.length).toLowerCase() === typedWord)
+      filteredWords.push(word);
+  });
+
+  createKeywordList(filteredWords);
+}
+
+inputEl.addEventListener("input", onInputChange);

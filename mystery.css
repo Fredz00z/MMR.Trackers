@@ -437,7 +437,6 @@ body {
 /*NOTES*/
 
 .notes-container {
-  display: inline-block;
   height: 510px;
   width: 405px;
   overflow: hidden;
@@ -459,7 +458,7 @@ body {
 #text-box {
   resize: vertical;
   width: 100%;
-  min-height: 100px;
+  min-height: 50px;
   max-height: 300px;
 }
 .text-box-container {
@@ -473,7 +472,8 @@ body {
   flex-wrap: wrap;
 }
 .woth,
-.foolish {
+.foolish,
+.quests-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
@@ -522,13 +522,43 @@ body {
   grid-column: 2/3;
   grid-row: 4/5;
 }
-
-.box-container .item {
+.quests-container {
+  width: 200px;
+}
+.quests {
+  display: grid;
+}
+.quests img {
+  grid-column: 1/2;
+}
+.quests input {
+  color: white;
+  background-color: rgb(96, 95, 95);
+  grid-column: 2/3;
+  padding: 4px;
+  height: 25px;
+  width: 175px;
+}
+.box-container > .item,
+.quests > .item {
   display: block;
   height: 30px;
   width: 30px;
   margin: 2px auto 2px auto;
 }
+.quests > .item {
+  height: 25px;
+  width: 25px;
+}
+.autocomplete-list button {
+  width: 250px;
+  list-style: none;
+  border: none;
+  border-radius: none;
+  position: absolute;
+  text-align: left;
+}
+
 /*TRACKER*/
 .tracker-container {
   width: 100%;

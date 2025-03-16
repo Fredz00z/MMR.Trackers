@@ -111,7 +111,7 @@
             <ul class="soil-container">
               <h2>Termina Field</h2>
               <div class="icon-container">
-                <img title="South Wall" src="imgs/tracker-icons/scoops/bug.png" alt="Bug">
+                <img id="South-Wall" src="imgs/tracker-icons/scoops/bug.png" alt="Bug">
                 <img src="imgs/tracker-icons/scoops/bug.png" alt="Bug">
                 <img src="imgs/tracker-icons/scoops/bug.png" alt="Bug">
                 <img src="imgs/tracker-icons/scoops/bug.png" alt="Bug">      
@@ -296,7 +296,7 @@
         <section id="notes-container" class="notes-container">
           <h1>NOTES</h1>
            <ul class="text-box-container">
-              <textarea name="" id="text-box" rows="5" cols="33"></textarea>
+              <textarea name="" id="text-box" rows="2" cols="33"></textarea>
            </ul>
           <div class="woth">
             <input id="input" type="text" >
@@ -353,7 +353,7 @@
              </ul>
            </div>
            <div class="foolish">
-            <input type="text">
+             <input type="text">
              <ul class="box-container">
                 <img class="item" src="imgs/hint-icons/seahorses-icon.png" alt="Seahorses">
                 <div class="box"></div>
@@ -362,14 +362,57 @@
              </ul>
            </div>
            <div class="foolish">
-            <input type="text">
-             <ul class="box-container">
+              <input type="text">
+              <ul class="box-container">
                 <img class="item" src="imgs/hint-icons/romani-icon.png" alt="Romani">
                 <div class="box"></div>
                 <div class="box"></div>
                 <img class="item" src="imgs/hint-icons/place-holder.png" alt="">
              </ul>
            </div>
+           <div class="quests-container">
+            <div class="quests">
+              <img class="item" src="imgs/tracker-icons/quest-items/tear.png" alt="Romani">
+              <input type="text">
+             </div>  
+             <div class="quests">
+              <img class="item" src="imgs/tracker-icons/quest-items/room.png" alt="Romani">
+              <input type="text">
+             </div>  
+             <div class="quests">
+              <img class="item" src="imgs/tracker-icons/quest-items/land-deed.png" alt="Romani">
+              <input type="text">
+             </div>  
+             <div class="quests">
+              <img class="item" src="imgs/tracker-icons/quest-items/ltk.png" alt="Romani">
+              <input type="text">
+             </div>  
+             <div class="quests">
+              <img class="item" src="imgs/tracker-icons/quest-items/swamp-deed.png" alt="Romani">
+              <input type="text">
+             </div>
+             <div class="quests">
+              <img class="item" src="imgs/tracker-icons/quest-items/ltm.png" alt="Romani">
+              <input type="text">
+             </div>
+             <div class="quests">
+              <img class="item" src="imgs/tracker-icons/quest-items/mountain-deed.png" alt="Romani">
+              <input type="text">
+             </div>
+             <div class="quests">
+              <img class="item" src="imgs/tracker-icons/quest-items/golden-dust.png" alt="Romani">
+              <input type="text">
+             </div>
+             <div class="quests">
+              <img class="item" src="imgs/tracker-icons/quest-items/ocean-deed.png" alt="Romani">
+              <input type="text">
+             </div>
+             <div class="quests">
+              <img class="item" src="imgs/tracker-icons/quest-items/bean.png" alt="Romani">
+              <input type="text">
+             </div>
+           </div>
+
         </section>
       </div>
       <section class="tracker-container">
@@ -735,6 +778,8 @@
         </div>
       </section>
     </main>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
     <script src = "tracker.js"></script></script>
   </body>
 </html>
