@@ -71,6 +71,79 @@ swapBtns.forEach((btn) => {
 
 /* Auto-complete */
 
+let keywords = [
+  "Clock Town",
+  "South Clock Town",
+  "SCT",
+  "West Clock Town",
+  "WCT",
+  "North Clock Town",
+  "NCT",
+  "East Clock Town",
+  "ECT",
+  "Termina Field",
+  "Road to Swamp",
+  "Swamp",
+  "Woodfall Temple",
+  "WFT",
+  "Snowhead Temple",
+  "SHT",
+  "Great Bay Temple ",
+  "GBT",
+  "Stone Tower",
+  "Stone Tower Temple",
+  "STT",
+];
+
+let sortedKeywords = keywords.sort();
+let inputEl = document.getElementById("input");
+
+function createKeywordList(keywords) {
+  const listEl = document.createElement("ul");
+  listEl.className = "autocomplete-list";
+  document.querySelector(".notes-container").appendChild(listEl);
+  keywords.forEach((word) => {
+    const listItem = document.createElement("li");
+    const keyButton = document.createElement("button");
+    keyButton.innerHTML = word;
+    listItem.appendChild(keyButton);
+    listEl.appendChild(listItem);
+    inputEl.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        inputEl.value = keyButton.innerHTML;
+        removeKeywordList();
+      }
+    });
+  });
+}
+
+function removeKeywordList() {
+  const listEl = document.querySelector(".autocomplete-list");
+  if (listEl) listEl.remove();
+}
+
+function onInputChange() {
+  removeKeywordList();
+
+  const typedWord = inputEl.value.toLowerCase();
+
+  if (typedWord.length === 0) return;
+
+  const filteredWords = [];
+
+  sortedKeywords.forEach((word) => {
+    if (word.substring(0, typedWord.length).toLowerCase() === typedWord)
+      filteredWords.push(word);
+  });
+
+  createKeywordList(filteredWords);
+}
+
+inputEl.addEventListener("input", onInputChange);
+
+/* auto-complete test
+
 let keywords = ["Great Bay Temple ", "GBT", "Snowhead Temple", "SHT"];
 
 let sortedKeywords = keywords.sort();
@@ -123,3 +196,5 @@ function onInputChange() {
 }
 
 inputEl.addEventListener("input", onInputChange);
+
+*/
