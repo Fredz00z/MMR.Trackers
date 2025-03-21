@@ -69,6 +69,32 @@ swapBtns.forEach((btn) => {
   });
 });
 
+/*RUPEE-SANITY TOGGLE */
+const redRupees = document.querySelector(".red-wrapper");
+const blueRupees = document.querySelector(".blue-wrapper");
+const greenRupees = document.querySelector(".green-wrapper");
+
+const rupeeBtns = document
+  .querySelector(".rupee-titles")
+  .querySelectorAll("button");
+rupeeBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (btn.id === "red-btn") {
+      redRupees.style.display = "block";
+      blueRupees.style.display = "none";
+      greenRupees.style.display = "none";
+    } else if (btn.id === "blue-btn") {
+      redRupees.style.display = "none";
+      blueRupees.style.display = "block";
+      greenRupees.style.display = "none";
+    } else {
+      redRupees.style.display = "none";
+      blueRupees.style.display = "none";
+      greenRupees.style.display = "block";
+    }
+  });
+});
+
 /* Auto-complete */
 
 let keywords = [
