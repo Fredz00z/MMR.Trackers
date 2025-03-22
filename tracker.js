@@ -95,6 +95,41 @@ rupeeBtns.forEach((btn) => {
   });
 });
 
+/*FAIRY-SANITY TOGGLE */
+const woodfallFairy = document.querySelector(".woodfall-wrapper");
+const snowheadFairy = document.querySelector(".snowhead-wrapper");
+const greatbayFairy = document.querySelector(".greatbay-wrapper");
+const stonetowerFairy = document.querySelector(".stonetower-wrapper");
+
+const fairyBtns = document
+  .querySelector(".fairy-titles")
+  .querySelectorAll("button");
+fairyBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (btn.id === "woodfall-btn") {
+      woodfallFairy.style.display = "block";
+      snowheadFairy.style.display = "none";
+      greatbayFairy.style.display = "none";
+      stonetowerFairy.style.display = "none";
+    } else if (btn.id === "snowhead-btn") {
+      woodfallFairy.style.display = "none";
+      snowheadFairy.style.display = "block";
+      greatbayFairy.style.display = "none";
+      stonetowerFairy.style.display = "none";
+    } else if (btn.id === "greatbay-btn") {
+      woodfallFairy.style.display = "none";
+      snowheadFairy.style.display = "none";
+      greatbayFairy.style.display = "block";
+      stonetowerFairy.style.display = "none";
+    } else {
+      woodfallFairy.style.display = "none";
+      snowheadFairy.style.display = "none";
+      greatbayFairy.style.display = "none";
+      stonetowerFairy.style.display = "block";
+    }
+  });
+});
+
 /* Auto-complete */
 
 let keywords = [
