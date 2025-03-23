@@ -1,11 +1,6 @@
-tippy("#South-Wall", {
-  content: "South Wall",
-  placement: "bottom",
-  duration: 0,
-});
-/* TRACKER-ITEM TOGGLE */
+/* ICON TOGGLE */
 const itemsEls = document
-  .querySelector(".tracker-container")
+  .querySelector(".toggleable-img-container")
   .querySelectorAll("img");
 
 itemsEls.forEach((itemEl) => {
@@ -13,6 +8,19 @@ itemsEls.forEach((itemEl) => {
     if (itemEl.style.filter === "none") {
       itemEl.style.filter = "grayscale(1)";
     } else itemEl.style.filter = "none";
+  });
+});
+
+/*SANITY ON-OFF TOGGLE */
+const onoffBtns = document.querySelectorAll(".sanity-toggle-btn");
+
+onoffBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (!btn.querySelector(".grayscale")) {
+      btn.parentNode.classList.add("grayscale");
+    } else {
+      btn.parentNode.classList.remove("grayscale");
+    }
   });
 });
 /* RIGHT CLICK EVENT
@@ -53,7 +61,7 @@ boxes.forEach((box) => {
   });
 });
 
-/*SHOP-SANITY TOGGLE */
+/* SHOP-SANITY TOGGLE */
 const shopFull = document.querySelector(".shop-full");
 const shopLate = document.querySelector(".shop-late");
 const swapBtns = document.querySelectorAll(".swap-btn");
@@ -68,8 +76,16 @@ swapBtns.forEach((btn) => {
     }
   });
 });
-
-/*RUPEE-SANITY TOGGLE */
+/*
+const swapBtns = document.querySelectorAll(".swap-btn");
+swapBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelector(".active")?.classList.remove("active");
+    btn.classList.add("active");
+  });
+});
+*/
+/* RUPEE-SANITY TOGGLE */
 const redRupees = document.querySelector(".red-wrapper");
 const blueRupees = document.querySelector(".blue-wrapper");
 const greenRupees = document.querySelector(".green-wrapper");
